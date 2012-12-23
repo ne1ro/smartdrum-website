@@ -1,4 +1,8 @@
 Smartdrum::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   get "records/index"
 
   get "records/show"

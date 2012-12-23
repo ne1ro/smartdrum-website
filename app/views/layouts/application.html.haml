@@ -1,11 +1,11 @@
 !!!
-%html
+%html{:style => 'min-height : 100%'}
   %head
     %title Smartdrum ❖  #{@title}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body{:style => 'min-height : 100%'}
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
@@ -23,8 +23,12 @@
               %li= link_to("Партнеры","/partners")
               %li= link_to("Контакты","/contacts")
               %li= link_to("О нас","/about")
-    .container
+    .container{:style => 'height : 100%!important; position:relative'}
       .row
+        - if notice
+          %p.notice= notice
+        - if alert
+          %p.alert= alert
         .span12= yield
     .container
       .row
