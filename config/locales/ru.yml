@@ -1,0 +1,8 @@
+ru:
+  views:
+    pagination:
+      first: "&laquo; Первая страница"
+      last: "Последняя страница &raquo;"
+      previous: "&lsaquo; Назад"
+      next: "Вперед &rsaquo;"
+      truncate: "..."

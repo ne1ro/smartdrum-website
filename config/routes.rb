@@ -3,18 +3,6 @@ Smartdrum::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  get "records/index"
-
-  get "records/show"
-
-  get "news/index"
-
-  get "news/show"
-
-  get "products/index"
-
-  get "products/show"
-
   get "pages/home"
 
   get "pages/partners"
@@ -44,7 +32,7 @@ Smartdrum::Application.routes.draw do
   #   resources :products
   resources :products, :only => [:index, :show]
   resources :news, :only => [:index, :show]
-  resources :record, :only => [:index, :show]
+  resources :records, :only => [:index, :show]
   # Sample resource route with options:
   #   resources :products do
   #     member do

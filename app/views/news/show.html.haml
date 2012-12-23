@@ -1,2 +1,14 @@
-%h1 News#show
-%p Find me in app/views/news/show.html.haml
+- unless @news.nil?
+  .container
+    .row
+      %hr
+      %h2= @news.header
+      = render :inline => @news.text
+    .row{:style => 'margin-top : 16px; text-align : center'}
+      .span2
+        %p{:style => 'font-weight : bold'} Добавлено:
+        %p=@news.created_at.to_s(:ru_datetime)
+      .span8
+      .span2{:style => 'float:right'}
+        %p{:style => 'font-weight : bold'} Обновлено:
+        %p{:style => ''}=@news.created_at.to_s(:ru_datetime) 

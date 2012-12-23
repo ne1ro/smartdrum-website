@@ -1,2 +1,17 @@
-%h1 Records#index
-%p Find me in app/views/records/index.html.haml
+- unless @blog.nil?
+  .container
+    - @blog.each do |record|
+      .row
+        %hr 
+        %a{:href => record_path(record.id)} 
+          %h2= record.header
+        = render :inline => record.text
+      .row{:style => 'margin-top : 16px; text-align : center'}
+        .span2
+          %p{:style => 'font-weight : bold'} Добавлено:
+          %p=record.created_at.to_s(:ru_datetime)
+        .span8
+        .span2{:style => 'float:right'}
+          %p{:style => 'font-weight : bold'} Обновлено:
+          %p{:style => ''}=record.created_at.to_s(:ru_datetime)
+    = paginate @blog

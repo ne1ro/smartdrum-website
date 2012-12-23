@@ -17,8 +17,8 @@
           .nav-collapse
             %ul.nav
               %li= link_to "Новости", news_index_path
-              %li= link_to "Блог", records_index_path
-              %li= link_to "Продукция", products_index_path
+              %li= link_to "Блог", records_path
+              %li= link_to "Продукция", products_path
               %li= link_to "Сотрудники", '/employers'
               %li= link_to("Партнеры","/partners")
               %li= link_to("Контакты","/contacts")
@@ -46,8 +46,8 @@
         .span3{:style => 'text-align:center'}
           =link_to("Главная", '/home', :style => 'display:block')
           =link_to("Новости", news_index_path, :style => 'display:block')
-          =link_to("Блог", records_index_path, :style => 'display:block')
-          =link_to("Продукция", products_index_path, :style => 'display:block')
+          =link_to("Блог", records_path, :style => 'display:block')
+          =link_to("Продукция", products_path, :style => 'display:block')
           =link_to("Партнеры", '/partners', :style => 'display:block')
           =link_to("Контакты", '/contacts',:style => 'display:block')
           =link_to("О нас", '/about',:style => 'display:block')
