@@ -1,5 +1,10 @@
 - unless @blog.nil?
   .container
+  %h3{:style => 'text-align : left'} Теги : 
+  #tag_cloud
+    %ul.breadcrumb
+      - tag_cloud Record.tag_counts, %w[s m l] do |tag, css_class|
+        %li= link_to tag.name, tag_path(tag.name), class: css_class
     - @blog.each do |record|
       .row
         %hr 
@@ -11,6 +16,10 @@
           %p{:style => 'font-weight : bold'} Добавлено:
           %p=record.created_at.to_s(:ru_datetime)
         .span8
+          - unless record.tag_list.empty?
+            %p{:style => 'font-weight : bold'} Теги:
+            - record.tag_list.each do |tag|
+              = link_to(tag, '/tags/' + tag)
         .span2{:style => 'float:right'}
           %p{:style => 'font-weight : bold'} Обновлено:
           %p{:style => ''}=record.created_at.to_s(:ru_datetime)

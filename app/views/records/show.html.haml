@@ -4,11 +4,17 @@
       %hr
       %h2= @record.header
       = render :inline => @record.text
+
     .row{:style => 'margin-top : 16px; text-align : center'}
       .span2
         %p{:style => 'font-weight : bold'} Добавлено:
         %p=@record.created_at.to_s(:ru_datetime)
       .span8
+        - unless @record.tag_list.nil?
+          %p{:style => 'font-weight : bold'} Теги:
+          %ul.breadcrumb
+            - @record.tag_list.each do |tag|
+              %li= link_to(tag, '/tags/' + tag) 
       .span2{:style => 'float:right'}
         %p{:style => 'font-weight : bold'} Обновлено:
         %p{:style => ''}=@record.created_at.to_s(:ru_datetime) 

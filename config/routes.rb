@@ -13,6 +13,8 @@ Smartdrum::Application.routes.draw do
 
   get "pages/about"
 
+  get 'tags/:tag', to: 'records#index', as: :tag
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
   # Sample of regular route:

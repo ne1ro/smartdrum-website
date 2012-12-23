@@ -2,7 +2,11 @@
 class RecordsController < ApplicationController
   def index
     @title = 'Блог'
-    @blog = Record.order("created_at DESC").page(params[:page]).per(5)
+    if params[:tag]
+      @blog = Record.tagged_with(params[:tag]).page(params[:page]).per(5)
+    else
+      @blog = Record.order("created_at DESC").page(params[:page]).per(5)
+    end
   end
 
   def show

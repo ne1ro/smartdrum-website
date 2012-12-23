@@ -36,6 +36,8 @@ gem "rmagick"
 gem 'kaminari'
 gem 'devise'
 gem 'bootswatch-rails'
+gem 'acts-as-taggable-on', '~> 2.3.1'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
