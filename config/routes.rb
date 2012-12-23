@@ -1,4 +1,26 @@
 Smartdrum::Application.routes.draw do
+  get "records/index"
+
+  get "records/show"
+
+  get "news/index"
+
+  get "news/show"
+
+  get "products/index"
+
+  get "products/show"
+
+  get "pages/home"
+
+  get "pages/partners"
+
+  get "pages/contacts"
+
+  get "pages/employers"
+
+  get "pages/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
