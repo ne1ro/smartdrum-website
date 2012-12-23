@@ -42,7 +42,9 @@ Smartdrum::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  resources :products, :only => [:index, :show]
+  resources :news, :only => [:index, :show]
+  resources :record, :only => [:index, :show]
   # Sample resource route with options:
   #   resources :products do
   #     member do
