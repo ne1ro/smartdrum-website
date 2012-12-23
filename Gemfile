@@ -23,6 +23,7 @@ group :assets do
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'bootswatch-rails'
   gem 'ckeditor'
+  gem "mini_magick"
 end
 
 gem 'jquery-rails'
