@@ -22,6 +22,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'bootswatch-rails'
+  gem 'ckeditor'
 end
 
 gem 'jquery-rails'
@@ -29,7 +30,6 @@ gem 'haml'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'activeadmin'
 gem 'coffee-filter'
-gem 'ckeditor'
 gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'

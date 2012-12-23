@@ -2,22 +2,48 @@
 
 class PagesController < ApplicationController
   def home
+    @page = Page.find_by_name('home')
+    if @page
+      @title = @page.title
+      render :layout => 'application.html.haml', :inline => @page.content
+    end
+    @page = Page.find_by_name('home')
     @title = 'Главная'
   end
 
   def partners
+    @page = Page.find_by_name('partners')
+    if @page
+      @title = @page.title
+      render :layout => 'application.html.haml', :inline => @page.content
+    end
     @title = 'Наши партнеры'
   end
 
   def contacts
+    @page = Page.find_by_name('contacts')
+    if @page
+      @title = @page.title
+      render :layout => 'application.html.haml', :inline => @page.content
+    end
     @title = 'Контакты'
   end
 
   def employers
+    @page = Page.find_by_name('employers')
+    if @page
+      @title = @page.title
+      render :layout => 'application.html.haml', :inline => @page.content
+    end
     @title = 'Сотрудники'
   end
 
   def about
+    @page = Page.find_by_name('about')
+    if @page
+      @title = @page.title
+      render :layout => 'application.html.haml', :inline => @page.content
+    end
     @title = 'О нас'
   end
 end
