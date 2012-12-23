@@ -7,7 +7,6 @@ gem 'rails', '3.2.9'
 
 gem 'mysql2'
 
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -16,11 +15,23 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-
+  gem 'haml-rails'
+  gem 'rails-i18n'
   gem 'uglifier', '>= 1.0.3'
+  gem 'font-awesome-sass-rails'
+  gem 'uglifier', '>= 1.0.3'
+  gem 'bootstrap-sass', '~> 2.2.2.0'
 end
 
 gem 'jquery-rails'
+gem 'haml'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'activeadmin'
+gem 'coffee-filter'
+gem 'ckeditor'
+gem 'carrierwave'
+gem "rmagick"
+gem 'kaminari'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
