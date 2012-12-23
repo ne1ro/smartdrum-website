@@ -37,6 +37,7 @@ gem 'kaminari'
 gem 'devise'
 gem 'bootswatch-rails'
 gem 'acts-as-taggable-on', '~> 2.3.1'
+gem "jquery-rails"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

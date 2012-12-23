@@ -3,6 +3,7 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 @import "bootswatch/united/bootswatch";
+@import 'font-awesome';
 
 h1 {
   text-align: center; 
@@ -14,4 +15,17 @@ h2 {
 
 h3 {
   text-align: center; 
+}
+
+#top_arrow {
+  display: none; 
+  position: fixed;
+  text-decoration: none; 
+  color: #dd4814;
+  z-index: 9; 
+}
+
+#top_arrow a:hover i{
+  color: #77216f!important;
+  text-decoration: none; 
 }
