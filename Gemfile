@@ -21,6 +21,7 @@ group :assets do
   gem 'font-awesome-sass-rails'
   gem 'uglifier', '>= 1.0.3'
   gem 'bootstrap-sass', '~> 2.2.2.0'
+  gem 'bootswatch-rails'
 end
 
 gem 'jquery-rails'
@@ -33,7 +34,7 @@ gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
 gem 'devise'
-
+gem 'bootswatch-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
