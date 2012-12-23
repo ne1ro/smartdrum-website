@@ -3,11 +3,13 @@
 class PagesController < ApplicationController
   def home
     @page = Page.find_by_name('home')
+    @news = News.order("created_at")[-5..-1]
+    @blog = Record.order("created_at")[-5..-1]
+    @products = Product.order("created_at")[-5..-1]
     if @page
       @title = @page.title
       render :layout => 'application.html.haml', :inline => @page.content
     end
-    @page = Page.find_by_name('home')
     @title = 'Главная'
   end
 
