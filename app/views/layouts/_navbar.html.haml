@@ -1,0 +1,17 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.brand{:href => "/home"} SmartDrum
+      .nav-collapse
+        %ul.nav
+          %li= link_to "Новости", news_index_path
+          %li= link_to "Блог", records_path
+          %li= link_to "Продукция", products_path
+          %li= link_to "Сотрудники", '/employers'
+          %li= link_to("Партнеры","/partners")
+          %li= link_to("Контакты","/contacts")
+          %li= link_to("О нас","/about")

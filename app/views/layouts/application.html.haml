@@ -1,53 +1,7 @@
 !!!
-%html{:style => 'min-height : 100%'}
-  %head
-    %title Smartdrum ❖  #{@title}
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body{:style => 'min-height : 100%'}
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => "/home"} SmartDrum
-          .nav-collapse
-            %ul.nav
-              %li= link_to "Новости", news_index_path
-              %li= link_to "Блог", records_path
-              %li= link_to "Продукция", products_path
-              %li= link_to "Сотрудники", '/employers'
-              %li= link_to("Партнеры","/partners")
-              %li= link_to("Контакты","/contacts")
-              %li= link_to("О нас","/about")
-    .container{:style => 'height : 100%!important; position:relative'}
-      .row
-        - if notice
-          %p.notice= notice
-        - if alert
-          %p.alert= alert
-        .span12= yield
-    .container
-      .row
-        %hr
-        .span3
-          %p{:style => 'text-align:center'} SmartDrum
-          =link_to(image_tag('smartdrum.png', :size => '100x100', :style => 'display:block; margin : 0 auto 0 auto'),'http://62.76.92.30:4000')
-          %p{:style => 'text-align:center'} ООО "СмартДрам"
-        .span6{:style => 'text-align:center; font-weight : bold'}
-          %br
-          %br 
-          %p Сайт разработан Кузнецовым Алексеем
-          %p Белгород, БГТУ им.Шухова, 2012
-          %p Все права защищены ©
-        .span3{:style => 'text-align:center'}
-          =link_to("Главная", '/home', :style => 'display:block')
-          =link_to("Новости", news_index_path, :style => 'display:block')
-          =link_to("Блог", records_path, :style => 'display:block')
-          =link_to("Продукция", products_path, :style => 'display:block')
-          =link_to("Партнеры", '/partners', :style => 'display:block')
-          =link_to("Контакты", '/contacts',:style => 'display:block')
-          =link_to("О нас", '/about',:style => 'display:block')
+%html
+  = render 'layouts/head'
+  %body
+    = render 'layouts/navbar'
+    = render 'layouts/container'
+    = render 'layouts/footer'

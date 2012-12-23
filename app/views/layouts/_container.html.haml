@@ -1,0 +1,7 @@
+.container{:style => 'height : 100%!important; position:relative'}
+  .row
+    - if notice
+      %p.notice= notice
+    - if alert
+      %p.alert= alert
+    .span12= yield
