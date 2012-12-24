@@ -37,7 +37,6 @@ Smartdrum::Application.routes.draw do
   resources :products, :only => [:index, :show]
   resources :news, :only => [:index, :show]
   resources :records, :only => [:index, :show]
-  resources :users
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -81,4 +80,9 @@ Smartdrum::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users, :skip => [:registrations]                                          
+    as :user do
+      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
+      put 'users' => 'devise/registrations#update', :as => 'user_registration'            
+    end
 end

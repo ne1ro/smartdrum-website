@@ -19,7 +19,7 @@ class PagesController < ApplicationController
       @title = @page.title
       render :layout => 'application.html.haml', :inline => @page.content
     end
-    @title = 'Наши партнеры'
+    @title = 'Партнеры'
   end
 
   def contacts

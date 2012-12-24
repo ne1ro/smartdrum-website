@@ -15,10 +15,12 @@
           %li= link_to("Контакты","/contacts")
           %li= link_to("О нас","/about")
           - if user_signed_in?
-            %li= link_to("Выйти", destroy_user_session_path, :method => :delete)
+            %li= link_to("Профиль", edit_user_registration_path, :method => :delete)
           - else
             %li= link_to "Регистрация", new_user_registration_path
             %li= link_to "Войти", new_user_session_path
+          = form_tag("/search", :method => "get", :class => 'navbar-search pull-left') do
+            = text_field_tag :q, 'Поиск', :class => 'search-query span2'
 :coffeescript
   $(document).ready ->
     # Get height of browser
@@ -32,5 +34,7 @@
       else
         arrow = document.getElementById("top_arrow")
         arrow.style.display = "block"
+    $(".nav li").each (index) ->
+      $(this).toggleClass "active"  if $(this).text() is "#{@title}"
 %a{:href => "#" , :onClick => '$("html, body").animate({ scrollTop: 0 }, "slow")', :id => 'top_arrow'} 
   %i.icon-circle-arrow-up{:style => 'font-size : 2.5em; top : 48px; position : fixed; left : 16px'}
