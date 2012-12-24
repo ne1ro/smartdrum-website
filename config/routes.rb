@@ -1,4 +1,6 @@
 Smartdrum::Application.routes.draw do
+  devise_for :users
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -35,6 +37,7 @@ Smartdrum::Application.routes.draw do
   resources :products, :only => [:index, :show]
   resources :news, :only => [:index, :show]
   resources :records, :only => [:index, :show]
+  resources :users
   # Sample resource route with options:
   #   resources :products do
   #     member do

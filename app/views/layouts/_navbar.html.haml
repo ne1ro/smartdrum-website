@@ -11,10 +11,14 @@
           %li= link_to "Новости", news_index_path
           %li= link_to "Блог", records_path
           %li= link_to "Продукция", products_path
-          %li= link_to "Сотрудники", '/employers'
           %li= link_to("Партнеры","/partners")
           %li= link_to("Контакты","/contacts")
           %li= link_to("О нас","/about")
+          - if user_signed_in?
+            %li= link_to("Выйти", destroy_user_session_path, :method => :delete)
+          - else
+            %li= link_to "Регистрация", new_user_registration_path
+            %li= link_to "Войти", new_user_session_path
 :coffeescript
   $(document).ready ->
     # Get height of browser
