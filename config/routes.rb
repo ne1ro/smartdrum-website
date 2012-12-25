@@ -1,4 +1,22 @@
 Smartdrum::Application.routes.draw do
+  get "record_comments/create"
+
+  get "record_comments/destroy"
+
+  get "record_comments/new"
+
+  get "prod_comments/create"
+
+  get "prod_comments/destroy"
+
+  get "prod_comments/new"
+
+  get "news_comments/create"
+
+  get "news_comments/destroy"
+
+  get "news_comments/new"
+
   get "profiles/show"
 
   get "profiles/new"
