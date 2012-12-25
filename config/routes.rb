@@ -11,10 +11,6 @@ Smartdrum::Application.routes.draw do
 
   get "prod_comments/new"
 
-  get "news_comments/create"
-
-  get "news_comments/destroy"
-
   get "news_comments/new"
 
   get "profiles/show"
@@ -78,6 +74,9 @@ Smartdrum::Application.routes.draw do
   resources :news, :only => [:index, :show]
   resources :records, :only => [:index, :show]
   resources :profiles, :only => [:show, :edit, :new, :create, :update]
+  resources :news_comments, :only => [:create, :destroy]
+  resources :prod_comments, :only => [:create, :destroy]
+  resources :record_comments, :only => [:create, :destroy]
   # Sample resource route with options:
   #   resources :products do
   #     member do

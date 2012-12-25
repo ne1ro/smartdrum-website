@@ -9,5 +9,9 @@ class NewsController < ApplicationController
     @news = News.find(params[:id])
     @title = @news.header
     @comments = @news.news_comment.page(params[:page]).per(10)
+    if user_signed_in?
+      @comment = NewsComment.new
+      @comment.news_id = @news.id
+    end
   end
 end
