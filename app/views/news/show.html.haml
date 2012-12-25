@@ -42,6 +42,8 @@
                   %p=comment.text
                   %p{:style => 'font-weight : bold'} Добавлено : 
                   %p=comment.created_at.to_s(:ru_datetime)
+                  - if current_user == comment.user
+                    = link_to("Удалить комментарий", comment, :method => :delete, :confirm => 'Вы действительно хотите удалить свой комментарий ?', :title => 'Удаление комментария')
             .span2
         .row
           .span2
