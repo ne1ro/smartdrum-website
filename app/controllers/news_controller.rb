@@ -3,6 +3,12 @@ class NewsController < ApplicationController
   def index
     @title = 'Новости'
     @news = News.order("created_at DESC").page(params[:page]).per(5)
+    @newsrss = News.order("created_at DESC").limit(20)
+
+    respond_to do |format|
+      format.html
+      format.atom { render :layout => false }
+    end
   end
 
   def show

@@ -7,6 +7,7 @@
         = form_for(@comment, :as => :comment, :url => {:action => "create", :controller => control}) do |comment|
           = comment.label "Текст комментария : "
           = comment.text_area(:text, :size => '20x5', :id => 'input_box')
+          %br
           = comment.submit "Добавить"
           = comment.hidden_field id
       .span3
