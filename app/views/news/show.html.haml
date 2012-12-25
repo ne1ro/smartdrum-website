@@ -12,3 +12,28 @@
         %p{:style => 'font-weight : bold'} Обновлено:
         %p{:style => ''}=@news.created_at.to_s(:ru_datetime)
     = render 'layouts/socialbuttons' 
+    .row
+      %hr
+      - if @comments.exists?
+        %h3 Комментарии 
+        - @comments.each do |comment|
+          .row-fluid
+            .span2
+            .span8
+              %hr
+              .row-fluid
+                .span3
+                  %a{:href => profile_path(comment.user.profile)}
+                    %h4=comment.user.profile.firstname
+                    = image_tag(comment.user.profile.image, :size => '75x75') if comment.user.profile.image?
+                    %h4=comment.user.profile.lastname
+                .span9
+                  %p=comment.text
+                  %p{:style => 'font-weight : bold'} Добавлено : 
+                  %p=comment.created_at.to_s(:ru_datetime)
+            .span2
+        .row
+          .span2
+          .span8
+            = paginate @comments
+          .span2

@@ -8,5 +8,6 @@ class NewsController < ApplicationController
   def show
     @news = News.find(params[:id])
     @title = @news.header
+    @comments = @news.news_comment.page(params[:page]).per(10)
   end
 end
