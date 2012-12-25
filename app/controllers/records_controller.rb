@@ -12,5 +12,10 @@ class RecordsController < ApplicationController
   def show
     @record = Record.find(params[:id])
     @title = @record.header
+    @comments = @record.record_comment.page(params[:page]).per(10)
+    if user_signed_in?
+      @comment = RecordComment.new
+      @comment.record_id = @record.id
+    end
   end
 end

@@ -1,0 +1,12 @@
+.row
+  - if user_signed_in?
+    .row-fluid
+      .span3
+      .span6
+        %h4 Добавить комментарий :
+        = form_for(@comment, :as => :comment, :url => {:action => "create", :controller => control}) do |comment|
+          = comment.label "Текст комментария : "
+          = comment.text_area(:text, :size => '20x5', :id => 'input_box')
+          = comment.submit "Добавить"
+          = comment.hidden_field id
+      .span3

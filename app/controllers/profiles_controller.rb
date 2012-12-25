@@ -17,7 +17,7 @@ before_filter :authenticate_profile, :only => [:edit, :update]
 
   def edit
     @profile = Profile.find(params[:id])
-    @title = 'Редактирование профиля'
+    @title = @profile.firstname
   end
 
   def update

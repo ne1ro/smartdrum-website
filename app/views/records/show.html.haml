@@ -21,3 +21,5 @@
               %li= link_to(tag, '/tags/' + tag) 
       .span2
     = render 'layouts/socialbuttons'
+    = render :partial => 'layouts/addcomments', :locals => {:control => 'record_comments', :id => 'record_id'.intern}
+    = render 'layouts/comments'

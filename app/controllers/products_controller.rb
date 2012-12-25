@@ -8,5 +8,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @title = @product.name
+    @comments = @product.prod_comment.page(params[:page]).per(10)
+    if user_signed_in?
+      @comment = ProdComment.new
+      @comment.product_id = @product.id
+    end
   end
 end

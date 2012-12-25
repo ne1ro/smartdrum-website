@@ -14,3 +14,5 @@
         %p{:style => 'font-weight : bold'} Цена:
         %p=@product.price.to_s + ' рублей' if @product.price?
     = render 'layouts/socialbuttons'
+    = render :partial => 'layouts/addcomments', :locals => {:control => 'prod_comments', :id => 'product_id'.intern}
+    = render 'layouts/comments'
