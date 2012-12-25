@@ -10,4 +10,5 @@
         = render :inline => @news.text if @news.text
       .span2
         %p{:style => 'font-weight : bold'} Обновлено:
-        %p{:style => ''}=@news.created_at.to_s(:ru_datetime) 
+        %p{:style => ''}=@news.created_at.to_s(:ru_datetime)
+    = render 'layouts/socialbuttons' 

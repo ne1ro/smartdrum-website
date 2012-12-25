@@ -14,9 +14,10 @@
     .row{:style => 'margin-top : 16px; text-align : center'}
       .span2
       .span8
-        - unless @record.tag_list.nil?
+        - unless @record.tag_list.empty?
           %p{:style => 'font-weight : bold'} Теги:
           %ul.breadcrumb
             - @record.tag_list.each do |tag|
               %li= link_to(tag, '/tags/' + tag) 
       .span2
+    = render 'layouts/socialbuttons'

@@ -1,0 +1,27 @@
+.row
+  .span4
+  .span4
+    .pluso.pluso-theme-light.pluso-round.pluso-small
+      .pluso-more-container
+        %a.pluso-more{:href => ""}
+        %ul.pluso-counter-container
+          %li
+          %li.pluso-counter
+          %li
+      %a.pluso-facebook
+      %a.pluso-twitter
+      %a.pluso-vkontakte
+      %a.pluso-odnoklassniki
+      %a.pluso-google
+      %a.pluso-myspace
+      %a.pluso-livejournal
+      %a.pluso-moimir
+      %a.pluso-liveinternet
+      %a.pluso-tumblr
+      %a.pluso-yandex
+      %a.pluso-bookmark
+      %a.pluso-email
+      %a.pluso-print
+    :javascript
+      if(!window.pluso){pluso={version:'0.9.1',url:'http://share.pluso.ru/'};h=document.getElementsByTagName('head')[0];l=document.createElement('link');l.href=pluso.url+'pluso.css';l.type='text/css';l.rel='stylesheet';s=document.createElement('script');s.src=pluso.url+'pluso.js';s.charset='UTF-8';h.appendChild(l);h.appendChild(s)}
+  .span4

@@ -13,3 +13,4 @@
         %p=@product.count.to_s if @product.count?
         %p{:style => 'font-weight : bold'} Цена:
         %p=@product.price.to_s + ' рублей' if @product.price?
+    = render 'layouts/socialbuttons'
