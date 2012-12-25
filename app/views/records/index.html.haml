@@ -7,20 +7,23 @@
         %li= link_to tag.name, tag_path(tag.name), class: css_class
     - @blog.each do |record|
       .row
-        %hr 
+        %hr
         %a{:href => record_path(record.id)} 
           %h2= record.header
-        = render :inline => record.text
-      .row{:style => 'margin-top : 16px; text-align : center'}
         .span2
           %p{:style => 'font-weight : bold'} Добавлено:
           %p=record.created_at.to_s(:ru_datetime)
+        .span8
+          = render :inline => record.text
+        .span2
+          %p{:style => 'font-weight : bold'} Обновлено:
+          %p{:style => ''}=record.created_at.to_s(:ru_datetime)
+      .row{:style => 'margin-top : 16px; text-align : center'}
+        .span2
         .span8
           - unless record.tag_list.empty?
             %p{:style => 'font-weight : bold'} Теги:
             - record.tag_list.each do |tag|
               = link_to(tag, '/tags/' + tag)
-        .span2{:style => 'float:right'}
-          %p{:style => 'font-weight : bold'} Обновлено:
-          %p{:style => ''}=record.created_at.to_s(:ru_datetime)
+        .span2
     = paginate @blog

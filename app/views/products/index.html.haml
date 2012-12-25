@@ -3,20 +3,15 @@
     - @products.each do |product|
       .row
         %hr 
-        %a{:href => product_path(product.id)} 
-          %h2= product.name
-        = image_tag(product.image) unless product.image.nil?
-        = render :inline => product.description
-        %p{:style => 'font-weight : bold'} Количество единиц на складе:
-        %p=product.count.to_s
-        %p{:style => 'font-weight : bold'} Цена:
-        %p=product.price.to_s + ' рублей'
-      .row{:style => 'margin-top : 16px; text-align : center'}
-        .span2
-          %p{:style => 'font-weight : bold'} Добавлено:
-          %p=product.created_at.to_s(:ru_datetime)
-        .span8
-        .span2{:style => 'float:right'}
-          %p{:style => 'font-weight : bold'} Обновлено:
-          %p{:style => ''}=product.created_at.to_s(:ru_datetime)
+        .span4
+          %a{:href => product_path(product.id)} 
+            %h2= product.name
+          = image_tag(product.image, :size => '150x150', :style => 'display:block;margin:0 auto 0 auto') if product.image?
+        .span4
+          = render :inline => product.description if product.description?
+        .span4
+          %p{:style => 'font-weight : bold'} Количество единиц на складе:
+          %p=product.count.to_s if product.count?
+          %p{:style => 'font-weight : bold'} Цена:
+          %p=product.price.to_s + ' рублей' if product.price?
     = paginate @products

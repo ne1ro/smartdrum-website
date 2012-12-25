@@ -1,0 +1,18 @@
+%h3 Редактирование профиля :
+.container
+  .row
+  = form_for(@profile) do |f|
+    .span5
+      = image_tag(@profile.image, :size => '150x150') if @profile.image
+      = f.file_field :image
+      = f.label 'Имя'
+      = f.text_field :firstname
+      = f.label 'Фамилия'
+      = f.text_field :lastname
+      = f.submit "Обновить"      
+    .span5
+      = f.label 'О себе :'
+      = f.text_area :about
+= link_to("Изменить регистрационные данные", edit_user_registration_path(@profile.user_id))
+%br 
+= link_to("Выйти",  destroy_user_session_path, :method => :delete)

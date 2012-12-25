@@ -3,12 +3,11 @@
     .row
       %hr
       %h2= @news.header
-      = render :inline => @news.text
-    .row{:style => 'margin-top : 16px; text-align : center'}
       .span2
         %p{:style => 'font-weight : bold'} Добавлено:
         %p=@news.created_at.to_s(:ru_datetime)
       .span8
-      .span2{:style => 'float:right'}
+        = render :inline => @news.text if @news.text
+      .span2
         %p{:style => 'font-weight : bold'} Обновлено:
         %p{:style => ''}=@news.created_at.to_s(:ru_datetime) 

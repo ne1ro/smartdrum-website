@@ -1,5 +1,27 @@
 Smartdrum::Application.routes.draw do
-  devise_for :users
+  get "profiles/show"
+
+  get "profiles/new"
+
+  get "profiles/delete"
+
+  get "profiles/edit"
+
+  get "profiles/update"
+
+  get "profiles/create"
+
+  get "profile/show"
+
+  get "profile/new"
+
+  get "profile/delete"
+
+  get "profile/edit"
+
+  get "profile/update"
+
+  get "profile/create"
 
   ActiveAdmin.routes(self)
 
@@ -37,6 +59,7 @@ Smartdrum::Application.routes.draw do
   resources :products, :only => [:index, :show]
   resources :news, :only => [:index, :show]
   resources :records, :only => [:index, :show]
+  resources :profiles, :only => [:show, :edit, :new, :create, :update]
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -80,9 +103,5 @@ Smartdrum::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users, :skip => [:registrations]                                          
-    as :user do
-      get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'    
-      put 'users' => 'devise/registrations#update', :as => 'user_registration'            
-    end
+  devise_for :users, :controllers => { :registrations => "registrations" }
 end

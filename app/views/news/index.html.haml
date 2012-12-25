@@ -5,13 +5,12 @@
         %hr 
         %a{:href => news_path(newz.id)} 
           %h2= newz.header
-        = render :inline => newz.text
-      .row{:style => 'margin-top : 16px; text-align : center'}
         .span2
           %p{:style => 'font-weight : bold'} Добавлено:
           %p=newz.created_at.to_s(:ru_datetime)
         .span8
-        .span2{:style => 'float:right'}
+          = render :inline => newz.text if newz.text
+        .span2
           %p{:style => 'font-weight : bold'} Обновлено:
           %p{:style => ''}=newz.created_at.to_s(:ru_datetime)
     = paginate @news

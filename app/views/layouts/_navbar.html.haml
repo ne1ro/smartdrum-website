@@ -15,7 +15,10 @@
           %li= link_to("Контакты","/contacts")
           %li= link_to("О нас","/about")
           - if user_signed_in?
-            %li= link_to("Профиль", edit_user_registration_path, :method => :delete)
+            - if !current_profile.nil?
+              %li= link_to(current_profile.firstname, edit_profile_path(current_profile.id))
+            - else
+              %li= link_to('Создать профиль', new_profile_path(current_user.id))
           - else
             %li= link_to "Регистрация", new_user_registration_path
             %li= link_to "Войти", new_user_session_path

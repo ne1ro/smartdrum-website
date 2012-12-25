@@ -1,0 +1,9 @@
+.container
+  .row
+    .span6
+      %h3=@profile.firstname+' '+@profile.lastname
+      = image_tag(@profile.image, :size => '200x200', :style => 'display:block; margin : 0 auto 0 auto') if @profile.image
+    .span4
+      %h3 О себе :
+      %p=@profile.about if @profile.about
+    .span2
