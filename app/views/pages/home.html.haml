@@ -1,0 +1,27 @@
+= link_to(image_tag('smartdrum.png', :style => 'margin: 0 auto 0 auto; display : block'), '#')
+%h1{:style => 'text-align : center'} Добро пожаловать на сайт нашей компании !
+.container
+  .row
+    %hr
+      .span4
+        %h2{:style => 'text-align:center'} Наши новости
+        - unless @news.nil?
+          - @news.reverse!
+          - @news.each do |newz|
+            %a{:href => news_path(newz.id)}
+              %p=newz.header
+      .span4
+        %h2{:style => 'text-align:center'} Наша продукция
+        - unless @products.nil?
+          - @products.reverse!
+          - @products.each do |product|
+            %a{:href => product_path(product.id)}
+              %p=product.name
+      .span4
+        %h2{:style => 'text-align:center'} Наш блог
+        - unless @blog.nil?
+          - @blog.reverse!
+          - @blog.each do |record|
+            %a{:href => record_path(record.id)}
+              %p=record.header
+

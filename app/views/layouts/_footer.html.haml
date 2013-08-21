@@ -1,0 +1,21 @@
+.container
+  .row
+    %hr
+    .span3
+      %p{:style => 'text-align:center'} SmartDrum
+      =link_to(image_tag('smartdrum.png', :size => '100x100', :style => 'display:block; margin : 0 auto 0 auto'),'#')
+      %p{:style => 'text-align:center'} ООО "СмартДрам"
+    .span6{:style => 'text-align:center; font-weight : bold'}
+      %br
+      %br 
+      %p Сайт разработан Кузнецовым Алексеем
+      %p Белгород, БГТУ им.Шухова, 2012
+      %p Все права защищены ©
+    .span3{:style => 'text-align:center'}
+      =link_to("Главная", '/home', :style => 'display:block')
+      =link_to("Новости", news_index_path, :style => 'display:block')
+      =link_to("Блог", records_path, :style => 'display:block')
+      =link_to("Продукция", products_path, :style => 'display:block')
+      =link_to("Партнеры", '/partners', :style => 'display:block')
+      =link_to("Контакты", '/contacts',:style => 'display:block')
+      =link_to("О нас", '/about',:style => 'display:block')
