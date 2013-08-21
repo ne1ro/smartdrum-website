@@ -1,0 +1,13 @@
+%hr
+  %h3
+    = @blog.header
+  %p
+    = @blog.data
+  %p  
+    = @blog.created_at.to_s(:ru_datetime)
+    - if signed_in? && current_user.admin?
+      = link_to("Добавить", new_blog_path)
+      = link_to("Изменить", edit_blog_path(@blog.id))
+      = link_to("Удалить", blogs_path(@blog.id), :method => :delete)
+%hr
+

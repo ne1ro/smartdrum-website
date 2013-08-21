@@ -1,0 +1,24 @@
+%h2 Регистрация нового пользователя
+= form_for(@user) do |f|
+  .field
+    = f.label :Имя
+    %br/
+    = f.text_field :firstname
+  .field
+    = f.label :Фамилия
+    %br/
+    = f.text_field :lastname  
+  .field
+    = f.label :Email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label 'О Себе'
+    %br/
+    = f.text_area :about
+  .field
+    = f.label :Пароль
+    %br/
+    = f.password_field :password
+  .actions
+    = f.submit "Войти"

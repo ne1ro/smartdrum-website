@@ -1,0 +1,23 @@
+%hr
+  %h3 
+    = link_to(@production.name,production_path(@production.id))
+  %p 
+    Наименование :
+    = @production.name
+    %br
+    Описание :
+    = @production.description
+    %br
+    Цена :
+    = @production.cost
+    %br
+    Количество на складе :
+    = @production.count
+  %br
+  %p  
+    = @production.created_at.to_s(:ru_datetime)
+    - if signed_in? && current_user.admin?
+      = link_to("Изменить", edit_production_path(@production.id))
+      = link_to("Удалить", @production, :method => :delete)
+  %hr
+

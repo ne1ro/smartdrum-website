@@ -1,0 +1,12 @@
+%h2 Вход на сайт
+= form_for(:session, :url => sessions_path) do |f|
+  .field
+    = f.label :Email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :Пароль
+    %br/
+    = f.password_field :password
+  .actions
+    = f.submit "Войти"

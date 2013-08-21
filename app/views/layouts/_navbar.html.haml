@@ -22,8 +22,6 @@
           - else
             %li= link_to "Регистрация", new_user_registration_path
             %li= link_to "Войти", new_user_session_path
-          = form_tag("/search", :method => "get", :class => 'navbar-search pull-left') do
-            = text_field_tag :q, 'Поиск', :class => 'search-query span2'
 :coffeescript
   $(document).ready ->
     # Get height of browser

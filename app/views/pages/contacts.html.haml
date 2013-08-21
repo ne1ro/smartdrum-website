@@ -1,2 +1,12 @@
-%h1 Pages#contacts
-%p Find me in app/views/pages/contacts.html.haml
+%h1 Наши контакты
+%h2 Карта
+%a#firmsonmap_biglink{:href => "http://maps.2gis.ru/#/?history=project/belgorod/center/36.597855895552,50.578925217599/zoom/17/state/widget/id/6474452745323168/firms/6474452745323168"} Перейти к большой карте
+%script{:charset => "utf-8", :src => "http://firmsonmap.api.2gis.ru/js/DGWidgetLoader.js", :type => "text/javascript"}
+%script{:charset => "utf-8", :type => "text/javascript"} new DGWidgetLoader({"borderColor":"#a3a3a3","width":"900","height":"600","wid":"17dd7293c29cd27b36ed6a3464503b52","pos":{"lon":"36.597855895552","lat":"50.578925217599","zoom":"17"},"opt":{"ref":"hidden","card":["name","contacts","schedule","payings"],"city":"belgorod"},"org":[{"id":"6474452745323168"}]});
+%noscript{:style => "color:#c00;font-size:16px;font-weight:bold;"} Виджет карты использует JavaScript. Включите его в настройках вашего браузера.
+
+%h4 E-mail
+%p smartdrum@smardrum.ru
+
+%h4 Телефон
+%p 42-42-42

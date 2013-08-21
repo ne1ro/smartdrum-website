@@ -1,0 +1,26 @@
+%h2 Наша продукция
+- if signed_in? && current_user.admin?
+  = link_to("Добавить продукцию", new_production_path)
+%hr
+- @production.each do |prod|
+  %h3 
+    = link_to(prod.name, production_path(prod.id))
+  %p 
+    Наименование :
+    = prod.name
+    %br
+    Описание :
+    = prod.description
+    %br
+    Цена :
+    = prod.cost
+    %br
+    Количество на складе :
+    = prod.count
+  %br
+  %p  
+    = prod.created_at.to_s(:ru_datetime)
+    - if signed_in? && current_user.admin?
+      = link_to("Изменить", edit_production_path(prod.id))
+      = link_to("Удалить", prod, :method => :delete)
+  %hr

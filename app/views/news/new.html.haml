@@ -1,0 +1,11 @@
+- if current_user.admin?
+  %h2 Добавление новости
+  =form_for(@news) do |news|
+    .field
+      = news.label "Заголовок новости :"
+      = news.text_field :header
+    .field
+      = news.label "Содержание :"
+      = news.text_area :data, :class => "tinymce", :rows => 10, :cols => 60
+    .actions
+      = news.submit "Добавить"

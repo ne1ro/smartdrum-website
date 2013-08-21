@@ -1,0 +1,16 @@
+%h2 Наш блог
+- if signed_in? && current_user.admin?
+  = link_to("Добавить запись", new_blog_path)
+%hr
+- @blog.each do |record|
+  %h3 
+    = link_to(record.header, blog_path(record.id))
+  %p 
+    = record.data
+  %br
+  %p  
+    = record.created_at.to_s(:ru_datetime)
+    - if signed_in? && current_user.admin?
+      = link_to("Изменить", edit_blog_path(record.id))
+      = link_to("Удалить", record, :method => :delete)
+  %hr

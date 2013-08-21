@@ -3,4 +3,8 @@ class RecordComment < ActiveRecord::Base
   belongs_to :record
   attr_accessible :text, :user_id, :record_id
   validates :text, :presence => :true
+
+  searchable do
+    text :text
+  end
 end

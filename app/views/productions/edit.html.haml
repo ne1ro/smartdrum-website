@@ -1,0 +1,18 @@
+- if signed_in? && current_user.admin?
+  %h2 Изменить продукцию
+  =form_for(@production) do |production|
+    .field
+      = production.label "Наименование товара:"
+      = production.text_field :name
+    .field
+      = production.label "Описание :"
+      %br
+      = production.text_area :description, :class => "tinymce", :rows => 10, :cols => 80
+    .field
+      = production.label "Цена:"
+      = production.text_field :cost
+    .field
+      = production.label "Количество:"
+      = production.text_field :count
+    .actions
+      = production.submit "Добавить"

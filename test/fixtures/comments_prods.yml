@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user: 
+  production: 
+  data: MyText
+
+two:
+  user: 
+  production: 
+  data: MyText

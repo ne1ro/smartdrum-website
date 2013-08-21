@@ -26,6 +26,10 @@ group :assets do
   gem "mini_magick"
 end
 
+group :development do
+    gem 'sunspot_solr'
+  end
+
 gem 'jquery-rails'
 gem 'haml'
 gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,6 +42,8 @@ gem 'devise'
 gem 'acts-as-taggable-on', '~> 2.3.1'
 gem "jquery-rails"
 gem 'devise-i18n'
+gem 'sunspot_rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

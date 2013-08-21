@@ -1,0 +1,9 @@
+- if signed_in?
+  %h3 Введите текст комментария :
+  %hr  
+  = form_for(@comment) do |comment|
+    .field 
+      = comment.label "Комментарий"
+      = comment.text_area :data
+    .actions
+      = comment.submit "Добавить"

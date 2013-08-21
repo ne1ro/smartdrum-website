@@ -1,3 +1,4 @@
+%h2 Наши новости
 - unless @news.nil?
   - content_for :head, auto_discovery_link_tag(:atom, news_index_path(format: "atom"))
   %a{:href => news_index_path(format: "atom")} 

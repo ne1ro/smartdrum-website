@@ -4,4 +4,8 @@ class Record < ActiveRecord::Base
   has_many :record_comment, :dependent => :destroy
   validates :header, :length => {:in => 4..255}, :presence => true
   validates :text, :presence => true
+
+  searchable do
+    text :text, :tag_list
+  end
 end

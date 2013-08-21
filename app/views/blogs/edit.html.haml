@@ -1,0 +1,12 @@
+- if current_user.admin?
+  %h2 Изменить запись
+  =form_for(@blog) do |blog|
+    .field
+      = blog.label "Заголовок записи:"
+      = blog.text_field :header
+    .field
+      = blog.label "Содержание :"
+      %br
+      = blog.text_area :data, :class => "tinymce", :rows => 10, :cols => 80
+    .actions
+      = blog.submit "Изменить"
